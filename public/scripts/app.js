@@ -9,68 +9,29 @@ $(document).ready(function() {
 
 const createTweetElement = function(tweet) {
 
+const $newTweet = $(`<article class='tweet'>
 
+                      <header>
+                        <img class='avatar' src=${tweet['user']['avatars']['small']}>
+                          <h1> ${tweet['user']['name']} </h1>
+                            <p> ${tweet['user']['handle']} </p>
+                      </header>
 
-  const newTweet = $("<article>").addClass("tweet")
+                      <div>
+                        <p> ${escape(tweet['content']['text'])} </p>
+                      </div>
 
+                      <footer>
+                        <p> ${tweet['created_at']} </p>
+                        <div>
+                          <i class='fas fa-flag'></i>
+                          <i class='fas fa-retweet'></i>
+                          <i class='far fa-heart'></i>
+                        </div>
+                      </footer>
+                    </article>`);
 
-  //create header and all its children
-
-  const newHeader = $("<header>");
-
-  const newImg = $("<img>")
-                 .addClass('avatar')
-                 .attr("src", tweet['user']['avatars']['small'])
-                 .appendTo($(newHeader));
-
-  const newName = $("<h1>" + tweet['user']['name'] + "</h1>")
-                  .appendTo($(newHeader));
-
-  const newHandle = $("<p>" + tweet['user']['handle'] + "</p>")
-                    .appendTo($(newHeader));
-
-  //append header to tweet
-  $(newHeader).appendTo($(newTweet));
-
-
-
-  //create tweet div
-
-  const newDiv = $("<div><p>" + escape(tweet['content']['text']) + "</p></div>")
-                 .appendTo($(newTweet));
-
-
-
-
-  //create footer and all its children
-
-  const newFooter = $("<footer>");
-
-  const newTimeStamp = $("<p>" + tweet['created_at'] + "</p>")
-                       .appendTo($(newFooter));
-
-  const newIconDiv = $("<div>")
-
-  const newFlag = $("<i>")
-                  .addClass('fas fa-flag')
-                  .appendTo($(newIconDiv));
-
-  const newRetweet = $("<i>")
-                  .addClass('fas fa-retweet')
-                  .appendTo($(newIconDiv));
-
-  const newHeart = $("<i>")
-                  .addClass('far fa-heart')
-                  .appendTo($(newIconDiv));
-
-
-  $(newIconDiv).appendTo($(newFooter));
-
-  $(newFooter).appendTo($(newTweet));
-
-
-  //return a tweet <article> element
-  return newTweet
+  return $newTweet;
 
   }
 
