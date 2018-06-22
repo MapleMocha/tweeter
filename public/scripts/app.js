@@ -11,10 +11,6 @@ $(document).ready(function() {
 
   const makeTimeStamp = function(createdAt){
     let currentTime = Date.now();
-    // console.log('curr: ' + currentTime);
-    // console.log('createdAt: ' + createdAt);
-
-    //  console.log((currentTime - createdAt) / 1000);
     let timeAgo = (currentTime - createdAt) / 1000; //represent seconds passed
     // / 1000 = sec
     //    /60 = min
@@ -42,7 +38,7 @@ $(document).ready(function() {
         timeAgo += ' minutes ago';
       }
   } else {
-      // timeAgo = Math.floor(timeAgo);
+      timeAgo = Math.floor(timeAgo);
       timeAgo += ' seconds ago';
   }
 
@@ -90,7 +86,7 @@ $(document).ready(function() {
         url: '/tweets',
         method: 'GET',
         success: function (allTweets) {
-          console.log('success', allTweets);
+          // console.log('success', allTweets);
           renderTweets(allTweets);
         },
         error: function(errormessage){
@@ -99,15 +95,17 @@ $(document).ready(function() {
       })
     }
 
-
   //call load tweets to page will intially load with all current tweets
   loadTweets();
 
 
+
+
+
+
+
   //function that added each new tweet to the feed
   const renderTweets = function(arrTweets) {
-
-    $('#tweet-feed').empty();
 
     for (let tweet in arrTweets){
       let tweetToAdd = createTweetElement(arrTweets[tweet])
@@ -135,38 +133,34 @@ $(document).ready(function() {
 
 //event handler for new tweet - form submission
 
-  const $submitTweet = $('.new-tweet input');
-  $submitTweet.on('click', function(event) {
-
+  $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
+    const $tweet = $('.new-tweet textarea');
 
-    const tweet = $('.new-tweet textarea')
-
-    if((tweet.val().length) > 140){
+    if(($tweet.val().length) > 140){
       warning('Too many chars there bud...');
-    } else if ((tweet.val().length) < 1){
+    } else if (($tweet.val().length) < 1){
       warning("can't tweet nothingness");
     } else {
-
-      console.log("Tweet submitted! Posting now...");
+      console.log("Tweet submitted! Posting now... " + $tweet.val());
 
       $.ajax({
         url: '/tweets',
         method: 'POST',
-        data: tweet.serialize(),
-        success: function (tweet) {
-          console.log('success OVER HERE' + tweet);
-          loadTweets();
+        data: $tweet.serialize(),
+        success: function (tweets) {
+          createTweetElement(tweets).prependTo($('#tweet-feed'));
           $('.new-tweet textarea').val("");
           $('.new-tweet .counter').text(140);
         },
         error: function(errormessage){
           console.log('error', errormessage);
         }
+
       })
     }
 
-  })
+  });
 
 
 
