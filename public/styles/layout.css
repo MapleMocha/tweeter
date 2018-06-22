@@ -35,10 +35,20 @@ body {
   padding-bottom: 120px;
 }
 
+.warning {
+  color: red;
+  font-size: 17px;
+  float: right;
+  font-weight: lighter;
+  margin-top: auto;
+}
+
 .new-tweet {
+  display: none;
   background-color: lightgrey;
   border-radius: 5px;
   width: 90%;
+  height: 180px;
   margin: auto;
 }
 
@@ -65,6 +75,7 @@ body {
 
 .new-tweet form textarea {
   width: 140%;
+  height: 80px;
   margin-right: 10px;
   margin-left: 10px;
   margin-bottom: 5px;

@@ -29,12 +29,11 @@
 }
 
 #nav-bar #composeBtn {
-  position: relative;
   font-size: 1.25em;
   line-height: 50px;
   text-align: center;
-  top: 15px;
-  right: 50px;
+  margin-top: 15px;
+  margin-right: 40px;
   float: right;
   width: 120px;
   height: 50px;

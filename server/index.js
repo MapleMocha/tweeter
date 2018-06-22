@@ -7,6 +7,7 @@ const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
 
+
 //connect with MongoDB
 const MongoClient = require('mongodb').MongoClient;
 const MONGODB_URI = 'mongodb://localhost:27017/tweeter';
