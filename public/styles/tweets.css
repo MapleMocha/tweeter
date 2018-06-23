@@ -85,6 +85,7 @@
 }
 
 #tweet-feed .tweet footer i {
+  display: none;
   padding: 2px;
 }
 
@@ -96,6 +97,10 @@
 
 #tweet-feed .tweet:hover > header{
   background-color: #d0d6dc;
+}
+
+#tweet-feed .tweet:hover > footer i {
+  display: inline;
 }
 
 #tweet-feed .tweet:hover {
