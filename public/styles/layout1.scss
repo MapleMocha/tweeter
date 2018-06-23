@@ -1,0 +1,112 @@
+
+$main-background-color: #e6dbdb;
+$center-strip-color: #fff;
+$compose-box-color: #c0dddc;
+$primary-text-color: #244751;
+$primary-color: #c39797;
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: $main-background-color;
+}
+
+body {
+  margin: 0;
+  color: $primary-text-color;
+
+  main {
+    height: 100%;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: $center-strip-color;
+
+    .warning {
+      color: #fa477a;
+      font-size: 17px;
+      float: right;
+      font-weight: lighter;
+      margin-top: auto;
+    }
+
+    //compose tweet box
+    .new-tweet {
+      display: none;
+      background-color: $compose-box-color;
+      border-radius: 5px;
+      width: 90%;
+      height: 180px;
+      margin: auto;
+
+      h2 {
+        padding-top: 10px;
+        margin: 10px 10px 15px 10px;
+        border-bottom: 1px solid #000;
+      }
+
+      form {
+        padding-top: 0;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        textarea {
+          width: 140%;
+          height: 80px;
+          margin: 0px 10px 5px 10px;
+          padding-top: 5px;
+          word-break: break-word;
+
+        }
+
+        .counter {
+          margin-top: 5px;
+          margin-right: 20px;
+          font-weight: 500;
+          &.overLimit {
+            color: #fa477a;
+          }
+        }
+
+        // "tweet" button
+        input {
+          margin-left: 10px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          border-radius: 5px;
+          background-color: $primary-color;
+          font-weight: 500;
+        }
+
+      }
+
+    }
+
+
+    #tweet-feed {
+      width: 100%;
+      margin-top: 100px;
+    }
+
+
+  }
+
+
+}
+
+
+
+
+
+
+

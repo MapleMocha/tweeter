@@ -1,0 +1,55 @@
+$primary-color: #80c2be;
+$accent-color-light: #facfd9;
+$button-color: #f3edaf;
+$accent-color-dark: #0e443b;
+
+#nav-bar {
+  position: fixed;
+  top: 0px;
+  left: 2rem;
+  right: 2rem;
+  height: 80px;
+  background-color: $primary-color;
+  color: $accent-color-dark;
+
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+
+  .header {
+    float: left;
+    font-size: 200%;
+    display: inline;
+    line-height: 75px;
+    padding-left: 10px;
+  }
+
+  #composeBtn {
+    font-size: 1.25rem;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 40px;
+    float: right;
+    width: 120px;
+    height: 50px;
+    background: linear-gradient($accent-color-light, $button-color);
+    color: #000;
+    border-radius: 20px;
+    border: 1pt solid #000;
+    &:hover {
+      border: 1pt solid $accent-color-dark;
+      color: $accent-color-dark;
+      font-weight: bold;
+      background: linear-gradient($button-color, $accent-color-light);
+    }
+  }
+
+
+
+
+
+}

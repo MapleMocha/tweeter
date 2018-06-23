@@ -16,12 +16,11 @@ $(document).ready(function() {
     element.text(newCount);
 
 
-    //if counter goes negative, add class to make it red
+    //if counter goes negative, add class to change colour
 
     if(newCount < 0){
-
-      console.log("HERE")
       element.addClass('overLimit');
+
     } else {
 
       element.removeClass('overLimit');

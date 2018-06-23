@@ -1,112 +1,80 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
-  font-family: 'Roboto Condensed', sans-serif;
-}
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+html {
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #e6dbdb;
+}
 
 body {
   margin: 0;
   color: #244751;
-  background-color: #eee;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
- main {
+body main {
+  height: 100%;
   width: 500px;
-  background-color: #fff;
   margin: auto;
   margin-top: 50px;
-  height: 100%;
   padding-top: 120px;
   padding-bottom: 120px;
+  background-color: #fff;
 }
-
-.warning {
-  color: red;
+body main .warning {
+  color: #fa477a;
   font-size: 17px;
   float: right;
   font-weight: lighter;
   margin-top: auto;
 }
-
-.new-tweet {
+body main .new-tweet {
   display: none;
-  background-color: lightgrey;
+  background-color: #c0dddc;
   border-radius: 5px;
   width: 90%;
   height: 180px;
   margin: auto;
 }
-
-.new-tweet h2 {
+body main .new-tweet h2 {
   padding-top: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px 10px 15px 10px;
   border-bottom: 1px solid #000;
-  margin-bottom: 15px;
-
 }
-
-.new-tweet form {
+body main .new-tweet form {
   padding-top: 0;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-radius: 10px;
   justify-content: space-between;
-
 }
-
-
-.new-tweet form textarea {
+body main .new-tweet form textarea {
   width: 140%;
   height: 80px;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 5px;
+  margin: 0px 10px 5px 10px;
   padding-top: 5px;
   word-break: break-word;
-
 }
-
-.new-tweet form .counter {
+body main .new-tweet form .counter {
+  margin-top: 5px;
   margin-right: 20px;
+  font-weight: 500;
 }
-
-.new-tweet form input {
+body main .new-tweet form .counter.overLimit {
+  color: #fa477a;
+}
+body main .new-tweet form input {
   margin-left: 10px;
   margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #c39797;
+  font-weight: 500;
 }
-
-#tweet-feed {
+body main #tweet-feed {
   width: 100%;
   margin-top: 100px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*# sourceMappingURL=layout.css.map */
